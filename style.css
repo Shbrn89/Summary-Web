@@ -1,0 +1,493 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(245, 247, 251);
+    color: rgb(31, 41, 55);
+}
+
+.navbar {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(2, 6, 23);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    color: rgb(56, 189, 248);
+}
+
+.hero {
+    min-height: 90vh;
+    padding: 80px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(135deg, rgb(2, 6, 23), rgb(29, 78, 216));
+    color: white;
+}
+
+.hero-content {
+    width: 50%;
+}
+
+.tagline {
+    color: rgb(56, 189, 248);
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: 54px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgb(219, 234, 254);
+    margin-bottom: 32px;
+}
+
+.hero-button,
+.primary-button,
+.secondary-button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 15px 26px;
+    background: rgb(56, 189, 248);
+    color: rgb(2, 6, 23);
+}
+
+.hero-button:hover {
+    background: white;
+}
+
+.hero-card {
+    width: 45%;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 30px;
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+}
+
+.hero-card h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.model-box {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 18px;
+    border-radius: 16px;
+    margin-bottom: 14px;
+}
+
+.model-box h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: rgb(191, 219, 254);
+}
+
+.model-box p {
+    color: rgb(224, 242, 254);
+    line-height: 1.6;
+}
+
+.app-section,
+.risk-section,
+.rouge-section,
+.comparison-section,
+.about-section {
+    padding: 70px 8%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.section-header p {
+    color: rgb(100, 116, 139);
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.input-panel,
+.output-panel,
+.rouge-container,
+.comparison-container {
+    background: white;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.input-panel h3,
+.output-panel h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+select,
+input,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid rgb(203, 213, 225);
+    border-radius: 12px;
+    font-size: 15px;
+    outline: none;
+}
+
+textarea {
+    height: 230px;
+    resize: vertical;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+    border-color: rgb(37, 99, 235);
+}
+
+.method-note {
+    background: rgb(239, 246, 255);
+    color: rgb(29, 78, 216);
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.primary-button {
+    width: 100%;
+    padding: 15px;
+    background: rgb(29, 78, 216);
+    color: white;
+    font-size: 16px;
+}
+
+.primary-button:hover {
+    background: rgb(30, 64, 175);
+}
+
+.primary-button:disabled,
+.secondary-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.secondary-button {
+    width: 100%;
+    padding: 14px;
+    background: rgb(2, 6, 23);
+    color: white;
+    margin-top: 15px;
+}
+
+.secondary-button:hover {
+    background: rgb(51, 65, 85);
+}
+
+.note {
+    margin-top: 14px;
+    font-size: 13px;
+    color: rgb(100, 116, 139);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.stats div {
+    background: rgb(239, 246, 255);
+    padding: 18px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.stats span {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(29, 78, 216);
+}
+
+.stats p {
+    color: rgb(100, 116, 139);
+    margin-top: 5px;
+}
+
+.model-info {
+    background: rgb(248, 250, 252);
+    border: 1px solid rgb(226, 232, 240);
+    padding: 14px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    line-height: 1.7;
+}
+
+.loading {
+    background: rgb(254, 243, 199);
+    color: rgb(146, 64, 14);
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.warning-box {
+    background: rgb(255, 247, 237);
+    color: rgb(154, 52, 18);
+    border: 1px solid rgb(253, 186, 116);
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none;
+}
+
+.summary-output {
+    height: 300px;
+}
+
+.risk-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.risk-card {
+    background: white;
+    border-left: 6px solid rgb(239, 68, 68);
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.risk-card h3 {
+    color: rgb(220, 38, 38);
+    margin-bottom: 10px;
+}
+
+.risk-card p {
+    color: rgb(71, 85, 105);
+    line-height: 1.6;
+}
+
+.empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    color: rgb(100, 116, 139);
+}
+
+.rouge-result,
+.comparison-result {
+    margin-top: 22px;
+}
+
+.rouge-table,
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-bottom: 22px;
+}
+
+.rouge-table th,
+.rouge-table td,
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid rgb(203, 213, 225);
+    padding: 13px;
+    text-align: center;
+}
+
+.rouge-table th,
+.comparison-table th {
+    background: rgb(2, 6, 23);
+    color: white;
+}
+
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.checkbox-grid label {
+    background: rgb(248, 250, 252);
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgb(226, 232, 240);
+    font-weight: bold;
+}
+
+.checkbox-grid input {
+    width: auto;
+    margin-right: 8px;
+}
+
+.best-model-box {
+    background: rgb(220, 252, 231);
+    border: 1px solid rgb(34, 197, 94);
+    color: rgb(22, 101, 52);
+    padding: 16px;
+    border-radius: 14px;
+    margin-bottom: 18px;
+}
+
+.comparison-summary-card {
+    background: rgb(248, 250, 252);
+    border: 1px solid rgb(226, 232, 240);
+    padding: 18px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.comparison-summary-card h3 {
+    margin-bottom: 10px;
+    color: rgb(29, 78, 216);
+}
+
+.comparison-summary-card p {
+    line-height: 1.7;
+    color: rgb(71, 85, 105);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.about-card {
+    background: white;
+    padding: 28px;
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.about-card h3 {
+    margin-bottom: 12px;
+    color: rgb(29, 78, 216);
+}
+
+.about-card p {
+    line-height: 1.7;
+    color: rgb(71, 85, 105);
+}
+
+footer {
+    padding: 24px;
+    text-align: center;
+    background: rgb(2, 6, 23);
+    color: white;
+}
+
+@media (max-width: 900px) {
+    .hero,
+    .app-container {
+        grid-template-columns: 1fr;
+        display: block;
+    }
+
+    .hero-content,
+    .hero-card {
+        width: 100%;
+    }
+
+    .hero-card {
+        margin-top: 30px;
+    }
+
+    .risk-container,
+    .about-grid,
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+}
