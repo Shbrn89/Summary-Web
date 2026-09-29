@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMMARLY-LEGAL</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SUMMARLY-LEGAL</div>
+
+        <div class="nav-links">
+            <button class="nav-button" data-target="home">Home</button>
+            <button class="nav-button" data-target="app">Summarizer</button>
+            <button class="nav-button" data-target="about">About</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">NLP Based Legal Text Summarization</p>
+            <h1>Summarize Long Terms and Conditions Documents</h1>
+            <p class="hero-description">
+                SUMMARLY-LEGAL summarizes long Terms and Conditions documents using trained local Transformer models and a TF-IDF baseline.
+            </p>
+            <button class="hero-button" data-target="app">Start Summarizing</button>
+        </div>
+
+        <div class="hero-card">
+            <h3>Proposal-Based Models</h3>
+
+            <div class="model-box">
+                <h4>TF-IDF Baseline</h4>
+                <p>Extractive summarization baseline that selects important sentences based on word weights.</p>
+            </div>
+
+            <div class="model-box">
+                <h4>BART Trained Model</h4>
+                <p>Main abstractive Transformer model loaded from local training checkpoint.</p>
+            </div>
+
+            <div class="model-box">
+                <h4>T5 and LED</h4>
+                <p>Comparison models used to evaluate summarization performance against BART and baseline.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-section" id="app">
+        <div class="section-header">
+            <p class="tagline">Summarizer Application</p>
+            <h2>Upload or Paste Your Document</h2>
+            <p>Choose one summarization method to summarize your Terms and Conditions document.</p>
+        </div>
+
+        <div class="app-container">
+            <div class="input-panel">
+                <h3>Input Document</h3>
+
+                <div class="form-group">
+                    <label>Input Type</label>
+                    <select id="inputType">
+                        <option value="text">Paste Text</option>
+                        <option value="file">Upload File</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="textInputGroup">
+                    <label>Terms and Conditions Text</label>
+                    <textarea id="textInput" placeholder="Paste your Terms and Conditions text here..."></textarea>
+                </div>
+
+                <div class="form-group hidden" id="fileInputGroup">
+                    <label>Upload PDF or TXT</label>
+                    <input type="file" id="fileInput" accept=".pdf,.txt">
+                </div>
+
+                <div class="form-group">
+                    <label>Summarization Method</label>
+                    <select id="method">
+                        <option value="tfidf">TF-IDF Extractive Summarizer - Baseline</option>
+                        <option value="bart" selected>BART Trained Model - Main Model</option>
+                        <option value="t5">T5 Trained Model - Comparison</option>
+                        <option value="led">LED Trained Model - Long Document Comparison</option>
+                    </select>
+                </div>
+
+                <div class="method-note" id="methodNote">
+                    BART is the main trained model used for abstractive summarization.
+                </div>
+
+                <button class="primary-button" id="summarizeButton">
+                    Generate Summary
+                </button>
+
+                <p class="note">
+                    First run may take longer because the selected model checkpoint needs to be loaded.
+                </p>
+            </div>
+
+            <div class="output-panel">
+                <h3>Summary Result</h3>
+
+                <div class="stats">
+                    <div>
+                        <span id="originalWordCount">0</span>
+                        <p>Original Words</p>
+                    </div>
+
+                    <div>
+                        <span id="summaryWordCount">0</span>
+                        <p>Summary Words</p>
+                    </div>
+                </div>
+
+                <div class="model-info">
+                    <p><strong>Detected Language:</strong> <span id="detectedLanguage">-</span></p>
+                    <p><strong>Used Model:</strong> <span id="usedModel">-</span></p>
+                </div>
+
+                <div id="loading" class="loading hidden">
+                    Processing document, please wait...
+                </div>
+
+                <div id="warningBox" class="warning-box hidden"></div>
+
+                <textarea id="summaryOutput" class="summary-output" readonly placeholder="Summary result will appear here..."></textarea>
+
+                <button class="secondary-button" id="downloadButton">
+                    Download Summary
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <p class="tagline">About Project</p>
+            <h2>How This Application Works</h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>Training Checkpoint</h3>
+                <p>The Transformer models are loaded from local trained model folders created during the training process.</p>
+            </div>
+
+            <div class="about-card">
+                <h3>TF-IDF Baseline</h3>
+                <p>TF-IDF is used as the extractive baseline to compare against Transformer-based abstractive summarization models.</p>
+            </div>
+
+            <div class="about-card">
+                <h3>Document Input</h3>
+                <p>Users can paste text directly or upload PDF and TXT files. The extracted text is cleaned before summarization.</p>
+            </div>
+
+            <div class="about-card">
+                <h3>Deployment Interface</h3>
+                <p>The web application acts as an inference interface for the trained summarization models.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>SUMMARLY-LEGAL | NLP Text Summarization Project</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
